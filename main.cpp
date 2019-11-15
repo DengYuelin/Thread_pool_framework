@@ -7,6 +7,8 @@
 #include "threadpool.h"
 
 #define CYCLE 50
+#define THREAD_NUM 6
+
 /*used function*/
 /*taskid and stra shoud be the input data, strb is the output place holder*/
 void function1(int taskid, const std::string& stra, std::string& strb) {
@@ -29,7 +31,7 @@ int main() {
     std::cout << "number of cores/threads:" << std::thread::hardware_concurrency() << std::endl;
     //create thread pool
     std::cout << "---------------------stating thread pool-------------------" << std::endl;
-    ThreadPool pool(6);
+    ThreadPool pool(THREAD_NUM);
 
     std::string strb[CYCLE]; //output holder holder
 
